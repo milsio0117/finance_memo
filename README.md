@@ -1,24 +1,91 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション名
+株式管理アプリケーション
 
-Things you may want to cover:
+## アプリケーション概要
+このアプリケーションは株式の管理をするためのもので、ユーザーが株式を作成、表示、編集、アーカイブ、削除できる機能を提供します。  
+また、アーカイブされた株式を表示する履歴機能も含まれています。  
+以下に、アプリケーションのセットアップおよび使用方法の詳細なガイドを示します。
 
-* Ruby version
+## URL
+[ ******************こちらはあとからやります********** ](https://finance_memo.onrender.com)
 
-* System dependencies
+## テスト用アカウント
+	email:siosan@siosan  
+	PASS :11111a
 
-* Configuration
+## 利用方法
 
-* Database creation
+### 新しい株式の作成
+* メインページに移動します。
+* 左側のフォームに銘柄コードまたは銘柄名を入力します。
+* 「Create Stock」ボタンをクリックします。
 
-* Database initialization
+### 株式の詳細表示
+* 左側のリストから株式エントリをクリックします。
+* 詳細が右側に表示されます。
 
-* How to run the test suite
+### メモの管理
+* 株式の詳細を表示します。
+* 提供されたフォームにメモを追加し、送信します。
+* メモが選択された株式に関連付けられます。
 
-* Services (job queues, cache servers, search engines, etc.)
+### 画像の管理
+* 株式の詳細を表示します。
+* 提供されたフォームに画像を追加し、送信します。
+* 画像が選択された株式に関連付けられます。
 
-* Deployment instructions
+### 株式のアーカイブ
+* 株式の詳細を表示します。
+* 「Archive Stock」ボタンをクリックして履歴リストに移動します。
 
-* ...
+### 履歴
+* 履歴ページに移動してアーカイブされた株式を表示します。
+* このページから株式をアクティブに戻すことができます。
+
+## アプリケーションを作成した背景
+数多くの株式アプリが存在し、証券会社が提供するアプリではチャートに線を引いたりすることも可能です。  
+しかし、その線に基づいて売買の予定をメモする機能があるアプリがなく、後日チャートを見直したときに、当初の予定や考えを忘れてしまうことが多く、非常に不便でした。  
+そこで、画像を貼り付け、売買の予定や監視するべき内容などを簡単にメモして残すことができるアプリが必要だと感じ、株式の分析や計画をより効果的に管理するために、このアプリを開発しました。
+
+## 実装した機能についての画像やGIFおよびその説明※
+*** エラーが出ており画像が撮れないのであとからやります ***
+
+## 実装予定の機能
+* ユーザー画像（アイコン）の登録
+* 決算情報などのニュースフィードの導入
+
+## データベース設計
+[![Image from Gyazo](https://i.gyazo.com/04e820add01a1d07d1d6ac1bab005077.png)](https://gyazo.com/04e820add01a1d07d1d6ac1bab005077)
+
+## 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/2b4f93ee88d20fea807af62d0b4aa507.png)](https://gyazo.com/2b4f93ee88d20fea807af62d0b4aa507)
+
+## 開発環境
+* フロントエンド：<img src="https://img.shields.io/badge/Javascript-276DC3.svg?logo=javascript&style=flat">
+* バックエンド：<img src="https://img.shields.io/badge/-Rails-CC0000.svg?logo=rails&style=flat">
+* ミドルウェア：<img src="https://img.shields.io/badge/-PostgreSQL-336791.svg?logo=postgresql&style=flat">
+* テキストエディタ：<img src="https://img.shields.io/badge/-Visual%20Studio%20Code-007ACC.svg?logo=visual-studio-code&style=flat">
+* タスク管理：<img src="https://img.shields.io/badge/-GitHub-181717.svg?logo=github&style=flat">
+
+## ローカルでの動作方法
+1. git clone https://github.com/milsio0117/finance_memo.git
+2. cd finance_memo
+3. brew install imagemagick
+4. bundle install
+
+## 工夫したポイント
+* ユーザビリティを考慮し、株式の新規登録画面と編集画面をなくし、詳細ページでのメモおよび画像の登録と削除のみとしました。
+* 快適なブラウザ操作の実現のため、メモ機能はAjaxを使用しました。
+* 今後実装したい機能や改善点をタスク管理としてGitHubのProject機能に設定し、開発プロセスを効率化しました。
+* 株式コードや銘柄名はCSVファイルから動的に呼び出せるようにし、サービスクラスでロジックを整理しました。
+* 冷静に銘柄分析ができるよう、配色は主に寒色系カラーで統一しました。
+
+## 改善点
+株式情報についてはAPIの導入により表示をしたいと思っています。  
+当初はAPIの導入を試みましたが、HTTPリクエストエラーにより実現できず、時間を考慮しcsvからの取り込みに切り替えました。  
+APIにより新規上場や上場廃止などにも自動的に対応できるため、今後は再度導入を試みようと思います。
+
+## 制作時間
+10日間
