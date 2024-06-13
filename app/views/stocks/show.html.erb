@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="left-content">
+      <div class="upper">
+      <h2>Stocks</h2>
+      <%# stock新規登録フォーム  %>
+      <%= render partial:'new_stock_form', locals: { new_stock: @new_stock} %>
+      <ul>
+        <%# 登録された株式一覧 %>
+        <% @stocks.each do |stock| %>
+          <li><%= link_to "#{stock.ticker} - #{stock.name}", stock_path(stock) %></li>
+        <% end %>
+      </ul>
+      </div>
+      <div class="lower">
+        <%= link_to "アーカイブ　→", history_stocks_path, class:"archive-link" %>
+      </div>
+    </div>
+
+    <div class="right-content">
+      <div id="stock-details", class="stock-details">
+        <%= render 'stock_details' %>
+      </div>
+    </div>
+  </div>
+</div>
