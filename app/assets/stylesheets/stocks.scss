@@ -55,23 +55,22 @@
 }
 
 .left-content{
-    background-color: rgb(54, 49, 84);
-    min-width: 350px;
+    background-color: rgb(56, 50, 88);
+    width: 350px;
     padding: 20px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    ul{
-        li{
+    .stocks_index{
+        .selected-stock{
             padding: 10px 20px;
-            
-            a{
-                color: rgb(255, 255, 255);
-            }
+            display: flex;
+            justify-content: space-between;
+            color: #ffffff;
         }
         
-        li:hover{
+        .selected-stock:hover{
             background-color: #f3ac48;
         }
     }
@@ -100,7 +99,58 @@
             line-height: 50px;
             display: block;
         }
+
+        .index-link{
+            background-color: #386979;
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 50px;
+            display: block;
+        }
+
+        .user_link{
+            display: flex;
+            flex-direction: column;
+        }
     }
+
+    .upper_archived{
+        h2{
+            color: #abd3df;
+        }
+
+        ul{
+            li{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            li:hover{
+                background-color: #529b9b;
+            }
+
+            li:first-child{
+                margin-top: 20px;
+            }
+
+            .selected_archive_link{
+                padding: 10px 20px;
+                color: #ffffff;
+            }
+
+            .rtn-active{
+                color: #ffffff;
+                padding: 10px 30px;
+            }
+
+            .rtn-active:hover{
+                background-color: #386979;
+            }
+        }
+    } 
 }
 
 .right-content{
@@ -273,8 +323,4 @@
         background-color: red;
         color: #ffffff;
     }   
-}
-
-.rtn-active{
-    margin-left: 10px;
 }
