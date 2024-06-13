@@ -128,14 +128,17 @@
 
         .new-memo-form{
             height: 80px;
-            border-radius: 10px;
             margin-bottom: 20px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            width: 80%;
     
             .new-form-content{
                 border-radius: 5px;
                 padding: 8px;
                 height: 100%;
-                width: 500px;
+                width: 80%;
                 border: solid 1px #344773;;
             }
     
@@ -146,6 +149,8 @@
                 border: solid 1px #344773;
                 background-color: #344773;
                 color: white;
+                margin-left: 20px;
+                height: 50px;
             }
         }
 
@@ -154,6 +159,7 @@
             border-radius: 10px;
             padding: 10px;
             margin-bottom: 20px;
+            width: 80%;
     
             .memo-delete{
                 margin-left: 10px;
@@ -215,6 +221,17 @@
         .image:hover .image-delete{
             display: block;
         }
+    }
+
+    .stock_nil{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        color: darkblue;
+        font-weight: 600;
+        letter-spacing: 6px;
+        margin: 50px 0;
     }
 }
 

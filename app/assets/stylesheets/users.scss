@@ -1,0 +1,87 @@
+/* スタイリッシュなCSS */
+body {
+    height: 100vh;
+}
+
+.sign_in,
+.sign_up{
+    height: 100%;
+    padding: 40px;
+    background-image: url(image-path('sign_up.jpg'));
+    background-size: cover;
+    background-position: center;
+    background-color:rgba(255,255,255,0.8);
+    background-blend-mode:lighten;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #5666a3;
+        font-size: 50px;
+    }
+    
+    form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto 50px;
+    }
+    
+    .field {
+        margin-bottom: 15px;
+    }
+    
+    .field label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+    }
+    
+    .field input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    
+    .field input:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+    
+    .actions {
+        text-align: center;
+    }
+    
+    .actions input[type="submit"] {
+        background-color: #5666a3;
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .actions input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    
+    .sign_in_link,
+    .sign_up_link {
+        text-align: center;
+        margin-top: 20px;
+        
+        // a{
+        //     color: #e06915;
+        // }
+    }
+    
+}
+
+

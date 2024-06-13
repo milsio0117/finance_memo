@@ -13,7 +13,11 @@
       </ul>
       </div>
       <div class="lower">
-        <%= link_to "アーカイブ　→", history_stocks_path, class:"archive-link" %>
+        <div class="user_link">
+          <%= link_to "#{current_user.name}さん /" , edit_user_path(@user) %>
+          <%= link_to "ログアウト", destroy_user_session_path, data:{turbo_method: :delete} %>
+        </div>
+        <%= link_to "アーカイブへ", history_stocks_path, class:"archive-link" %>
       </div>
     </div>
 
