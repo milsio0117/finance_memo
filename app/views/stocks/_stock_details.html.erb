@@ -1,0 +1,73 @@
+<% if @stock %>
+
+<div class="stock-content">
+  <div class="stock-header">
+    <h2><%= @stock.name %> (<%= @stock.ticker %>)</h2>
+    <p> / <%= @stock.market %></p>
+    <p> / <%= @stock.industry %></p>
+  </div>
+  <%# memoの登録 %>
+  <%= form_with model: [@stock, @memo], method: :post, id: "form", data: { stock_id: @stock.id },class:"new-memo-form" do |form| %>
+    <%= form.text_area :content, id: "content",class:"new-form-content" %>
+    <%= form.submit 'メモ追加', id: "submit",class:"new-form-submit" %>
+  <% end %>
+
+  <div id="list"></div>
+  <%# memoの表示 %>
+  <% if @memos.present? %>
+    <% @memos.each do |memo| %>
+      <div class="memo">
+        <div class="post-content">
+          <%= memo.content %>
+        </div>
+        <div class="post-date">
+          <%= l memo.created_at, format: :long %><%= link_to "削除", stock_memo_path(memo.stock_id,memo.id),data:{ turbo_method: :delete} ,class:"memo-delete" %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <%# 画像upload %>
+  <%= form_with(model: @stock, url: add_image_stock_path(@stock),method: :post, local: true, class:"add-image-form") do |form| %>
+    <label class="form-image">
+      <%= image_tag("fileupload_120150", class: "add-image-file") %>
+      <%= form.file_field :images, direct_upload:true, class: "hidden" %>
+    </label>
+      <%= form.submit 'ファイルをアップロード', class:"file-upload" %>
+  <% end %>
+  <%# 画像の表示 %>
+  <div class="form-images">
+    <% @stock.images.each do |image| %>
+    <%# <% if user_signed_in? && current_user.id == @stock.user_id %>
+      <%# <% end %>
+      <div class="image">
+        <%= image_tag image.variant(resize: '400 x 400') %>
+        <div class="image-delete">
+          <%= link_to '', remove_image_stock_path(image), data: { turbo_method: :delete }, class:"square_btn" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%# PDF %>
+  <% if @stock.pdfs.attached?%>
+    <h3>PDFs</h3>
+    <% @stock.pdfs.each do |pdf| %>
+      <%= link_to pdf.filename.to_s, url_for(pdf) %><br>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="details-footer">
+  <%= link_to 'topへ', root_path, class: 'root-link' %>
+
+  <%= form_with url: archive_stock_path(@stock), method: :patch, local: true do %>
+    <%= submit_tag 'アーカイブ', class: "root-link" %>
+  <% end %>
+
+  <%= link_to "削除する", stock_path(@stock),data:{ turbo_method: :delete},class:'delete-stock-link' %>
+</div>
+  
+<% else %>
+  <p>Select a stock to see details</p>
+<% end %>
