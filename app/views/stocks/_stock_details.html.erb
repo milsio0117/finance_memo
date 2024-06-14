@@ -30,7 +30,7 @@
   <%# 画像upload %>
   <%= form_with(model: @stock, url: add_image_stock_path(@stock),method: :post, local: true, class:"add-image-form") do |form| %>
     <label class="form-image">
-      <%= image_tag("fileupload_120150", class: "add-image-file") %>
+      <%= image_tag("fileupload_120150.png", class: "add-image-file") %>
       <%= form.file_field :images, direct_upload:true, class: "hidden" %>
     </label>
       <%= form.submit 'ファイルをアップロード', class:"file-upload" %>
