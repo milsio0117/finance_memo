@@ -62,13 +62,14 @@
   <%= link_to 'topへ', root_path, class: 'root-link' %>
 
   <%= form_with url: archive_stock_path(@stock), method: :patch, local: true do %>
-    <%= submit_tag 'アーカイブ', class: "root-link" %>
+    <%= submit_tag 'アーカイブする', class: "root-link" %>
   <% end %>
 
   <%= link_to "削除する", stock_path(@stock),data:{ turbo_method: :delete},class:'delete-stock-link' %>
 </div>
   
 <% else %>
+
   <div class="stock_nil">
    <p>株式を選んでください</p>
   </div>

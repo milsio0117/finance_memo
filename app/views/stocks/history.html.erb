@@ -3,19 +3,20 @@
   <div class="row">
     <%# 左側 %>
     <div class="left-content">
-      <div class="upper">
+      <div class="upper_archived">
         <h2>Archived Stocks</h2>
         <%# 登録された株式一覧 %>
         <ul>
          <% @stocks.each do |stock| %>
             <li>
-              <%= link_to "#{stock.ticker} - #{stock.name}", stock_path(stock) %>
+              <%= link_to "#{stock.ticker} - #{stock.name}", stock_path(stock),class:"selected_archive_link" %>
               <%= link_to '戻す', unarchive_stock_path(stock), data: {turbo_method: :patch}, class: 'rtn-active' %>
            </li>
         <% end %>
       </ul>
       </div>
       <div class="lower">
+
         <div class="user_link">
           <%= link_to "#{current_user.name}さん /" , edit_user_path(@user) %>
           <%= link_to "ログアウト", destroy_user_session_path, data:{turbo_method: :delete} %>

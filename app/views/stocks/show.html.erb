@@ -5,14 +5,15 @@
       <h2>Stocks</h2>
       <%# stock新規登録フォーム  %>
       <%= render partial:'new_stock_form', locals: { new_stock: @new_stock} %>
-      <ul>
+      <ul class="stocks_index">
         <%# 登録された株式一覧 %>
         <% @stocks.each do |stock| %>
-          <li><%= link_to "#{stock.ticker} - #{stock.name}", stock_path(stock) %></li>
+          <li><%= link_to "#{stock.ticker} - #{stock.name}", stock_path(stock), class:"selected-stock" %></li>
         <% end %>
       </ul>
       </div>
       <div class="lower">
+
         <div class="user_link">
           <%= link_to "#{current_user.name}さん /" , edit_user_path(@user) %>
           <%= link_to "ログアウト", destroy_user_session_path, data:{turbo_method: :delete} %>

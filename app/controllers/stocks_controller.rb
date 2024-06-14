@@ -24,7 +24,6 @@ class StocksController < ApplicationController
     end
 
     def unarchive
-      binding.pry
       @stock.active!
       redirect_to history_stocks_path, notice: 'Stock successfully restored to active status.'
     end
