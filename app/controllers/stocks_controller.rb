@@ -45,6 +45,7 @@ class StocksController < ApplicationController
     end
   
     def show
+      @user = current_user
       @new_stock = Stock.new
       @stocks = Stock.active
       @memo = Memo.new
