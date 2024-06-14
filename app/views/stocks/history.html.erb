@@ -16,7 +16,11 @@
       </ul>
       </div>
       <div class="lower">
-        <%= link_to "#{current_user.name}さん" , edit_user_path(@user) %>
+
+        <div class="user_link">
+          <%= link_to "#{current_user.name}さん /" , edit_user_path(@user) %>
+          <%= link_to "ログアウト", destroy_user_session_path, data:{turbo_method: :delete} %>
+        </div>
         <%= link_to "ホームへ", root_path, class:"index-link" %>
       </div>
     </div>
