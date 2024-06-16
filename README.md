@@ -12,6 +12,7 @@ FinanceMemo
 https://finance-memo-ouqx.onrender.com
 
 ## テスト用アカウント
+	name：しお
 	email:siosan@siosan  
 	PASS :11111a
 
