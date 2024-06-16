@@ -1,3 +1,21 @@
+// contentが空の場合submitボタンを無効にする
+function enableSubmitButton() {
+    const submit = document.getElementById("submit");
+    const content = document.getElementById("content");
+  
+    submit.disabled = true;
+  
+    content.addEventListener("input", function() {
+      if (content.value !== "") {
+        submit.disabled = false;
+      } else {
+        submit.disabled = true;
+      }
+    });
+  }
+
+
+  // memoのHTMLを生成
 const buildHTML = (XHR) =>{
     const item = XHR.response.memo;
     const date = new Date(item.created_at);
@@ -14,6 +32,7 @@ const buildHTML = (XHR) =>{
     return html;
 };
 
+// memoを送信
 function memo(){
     const form = document.getElementById("form");
 
@@ -35,8 +54,10 @@ function memo(){
             
             list.insertAdjacentHTML("afterend",buildHTML(XHR))
             formText.value ="";
+            submit.disabled = true;
         };
     });
 };
 
+window.addEventListener('turbo:load', enableSubmitButton);
 window.addEventListener('turbo:load',memo)
