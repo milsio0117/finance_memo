@@ -25,14 +25,14 @@ class StocksController < ApplicationController
 
     def unarchive
       @stock.active!
-      redirect_to history_stocks_path, notice: 'Stock successfully restored to active status.'
+      redirect_to history_stocks_path
     end
   
     def create
       query = stock_params[:ticker].blank? ? stock_params[:name] : stock_params[:ticker]
       service = CreateStockService.new(query, stock_params, current_user)
       if service.call
-        redirect_to stock_path(service.stock), notice: 'Stock successfully created'
+        redirect_to stock_path(service.stock)
       else
         @stock = service.stock || Stock.new(stock_params)
         @stocks = Stock.active
@@ -71,6 +71,22 @@ class StocksController < ApplicationController
       @image.purge
       redirect_to @image.record
     end
+
+    # def add_pdf
+    #   @stock = Stock.find(params[:id])
+    #   @stock.pdfs.attach(params[:stock][:pdfs])
+    #   if @stock.save
+    #     redirect_to @stock, notice: '画像がアップロードされました'
+    #   else
+    #     redirect_to @stock, alert: '画像のアップロードに失敗しました'
+    #   end
+    # end
+
+    # def remove_pdf
+    #   @pdf = ActiveStorage::Attachment.find(params[:id])
+    #   @pdf.purge
+    #   redirect_to @pdf.record
+    # end
   
     private
   

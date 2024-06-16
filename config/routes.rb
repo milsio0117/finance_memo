@@ -10,16 +10,17 @@ Rails.application.routes.draw do
     member do
       patch :archive
       patch :unarchive
+      post :add_image
+      delete :remove_image
+      # post :add_pdf
+      # delete :remove_pdf
     end
+
     collection do
       get :history
     end
 
     resources :memos, only: [:create, :destroy]
-    member do
-      post 'add_image'
-      delete 'remove_image'
-    end
     
   end
 end
