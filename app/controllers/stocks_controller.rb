@@ -15,7 +15,7 @@ class StocksController < ApplicationController
 
     def history
       @user = current_user
-      @stocks = Stock.archived
+      @archived_stocks = Stock.archived
     end
 
     def archive
@@ -46,9 +46,13 @@ class StocksController < ApplicationController
     def show
       @user = current_user
       @new_stock = Stock.new
-      @stocks = Stock.active
       @memo = Memo.new
       @memos = @stock.memos.order(created_at: :desc)
+      if params[:origin] == "history"
+        @archived_stocks = Stock.archived
+      else
+        @stocks = Stock.active
+      end
     end
   
     def destroy

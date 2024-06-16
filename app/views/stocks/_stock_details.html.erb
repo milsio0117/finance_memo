@@ -7,9 +7,11 @@
     <p> / <%= @stock.industry %></p>
   </div>
   <%# memoの登録 %>
+  <% if @stock.active? %>
   <%= form_with model: [@stock, @memo], method: :post, id: "form", data: { stock_id: @stock.id },class:"new-memo-form" do |form| %>
     <%= form.text_area :content, id: "content",class:"new-form-content" %>
     <%= form.submit 'メモ追加', id: "submit",class:"new-form-submit" %>
+  <% end %>
   <% end %>
 
   <div id="list"></div>
@@ -38,8 +40,6 @@
   <%# 画像の表示 %>
   <div class="form-images">
     <% @stock.images.each do |image| %>
-    <%# <% if user_signed_in? && current_user.id == @stock.user_id %>
-      <%# <% end %>
       <div class="image">
         <%= image_tag image.variant(resize: '400 x 400') %>
         <div class="image-delete">
@@ -58,6 +58,7 @@
   <% end %>
 </div>
 
+<% if !@stock.archived? %>
 <div class="details-footer">
   <%= link_to 'topへ', root_path, class: 'root-link' %>
 
@@ -67,6 +68,7 @@
 
   <%= link_to "削除する", stock_path(@stock),data:{ turbo_method: :delete},class:'delete-stock-link' %>
 </div>
+<% end %>
   
 <% else %>
 
