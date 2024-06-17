@@ -1,4 +1,4 @@
-window.onload = function() {
+document.addEventListener('DOMContentLoaded',function() {
     const uploadButton = document.querySelector('.file-upload');
     const fileInput = document.querySelector('.hidden');
   
@@ -9,4 +9,4 @@ window.onload = function() {
         submitButton.disabled = false;
       }
     };
-  }
+  });

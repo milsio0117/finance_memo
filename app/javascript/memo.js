@@ -59,5 +59,5 @@ function memo(){
     });
 };
 
-window.addEventListener('turbo:load', enableSubmitButton);
-window.addEventListener('turbo:load',memo)
+document.addEventListener('turbo:load', enableSubmitButton);
+document.addEventListener('turbo:load',memo)
