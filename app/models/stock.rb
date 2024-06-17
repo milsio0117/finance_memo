@@ -9,7 +9,7 @@ class Stock < ApplicationRecord
     enum status: {active: 0, archived: 1}
     validates :status, inclusion: { in: statuses.keys }
     validates :ticker, presence: true
-    validates :images, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']
+    validates :images, content_type: ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']
     # validates :pdfs, attached: true, content_type: ['application/pdf']
   
     private
