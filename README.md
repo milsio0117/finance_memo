@@ -11,6 +11,10 @@ FinanceMemo
 ## URL
 https://finance-memo-ouqx.onrender.com
 
+## basic認証
+	ユーザー名:admin
+ 	パスワード:2222
+
 ## テスト用アカウント
 	name：しお
 	email:siosan@siosan  
