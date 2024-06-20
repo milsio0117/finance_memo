@@ -63,7 +63,7 @@
   <%= link_to 'topへ', root_path, class: 'root-link' %>
 
   <%= form_with url: archive_stock_path(@stock), method: :patch, local: true do %>
-    <%= submit_tag 'アーカイブする', class: "root-link" %>
+    <%= submit_tag 'アーカイブする' %>
   <% end %>
 
   <%= link_to "削除する", stock_path(@stock),data:{ turbo_method: :delete},class:'delete-stock-link' %>

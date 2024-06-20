@@ -45,13 +45,12 @@
         text-align: center;
         position: relative;
         left: 20%;
+
+        &:hover{
+            background-color: #ffc778;
+        }
     }
-}
 
-
-
-.new_stock_link:hover{
-    background-color: #ffc778;
 }
 
 .left-content{
@@ -68,10 +67,10 @@
             display: flex;
             justify-content: space-between;
             color: #ffffff;
-        }
-        
-        .selected-stock:hover{
-            background-color: #f3ac48;
+
+            &:hover{
+                background-color: #f3ac48;
+            }
         }
     }
 
@@ -126,10 +125,9 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-            }
-
-            li:hover{
-                background-color: #529b9b;
+                &:hover{
+                    background-color: #529b9b;
+                }
             }
 
             li:first-child{
@@ -144,10 +142,9 @@
             .rtn-active{
                 color: #ffffff;
                 padding: 10px 30px;
-            }
-
-            .rtn-active:hover{
-                background-color: #386979;
+                &:hover{
+                    background-color: #386979;
+                }
             }
         }
     } 
@@ -155,13 +152,15 @@
 
 .right-content{
     width: calc(100% - 350px);
-    padding: 20px;
 
     .stock-details{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
+
+        .stock-content{
+            padding: 20px;}
 
         .stock-header{
             display: flex;
@@ -316,19 +315,30 @@
 }
 
 .details-footer{
-    height: 50px;
     line-height: 50px;
     display: flex;
     justify-content: space-between;
 
+    form{
+        width: 34%;
+        input{
+            height: 100%;
+            width: 100%;
+            color: #ffffff;
+            background-color: #606060;
+            border: none;
+            &:hover{
+                background-color: #f9970e;
+            }
+        }
+    }
+
     .root-link,
     .delete-stock-link{
-        border-radius: 8px;
-        border: solid 1px #344773;
         text-align: center;
-        width: 100px;
-        background-color: #959499;
-        height: 100%;
+        width: 33%;
+        background-color: #606060;
+        color: #ffffff;
     }
 
     .root-link:hover{
