@@ -82,7 +82,7 @@ https://finance-memo-ouqx.onrender.com
 [![Image from Gyazo](https://i.gyazo.com/2b4f93ee88d20fea807af62d0b4aa507.png)](https://gyazo.com/2b4f93ee88d20fea807af62d0b4aa507)
 
 ## 開発環境
-* フロントエンド：<img src="https://img.shields.io/badge/Javascript-276DC3.svg?logo=javascript&style=flat">
+<!-- * フロントエンド：<img src="https://img.shields.io/badge/Javascript-276DC3.svg?logo=javascript&style=flat">　-->
 * バックエンド：<img src="https://img.shields.io/badge/-Rails-CC0000.svg?logo=rails&style=flat">
 * ミドルウェア：<img src="https://img.shields.io/badge/-PostgreSQL-336791.svg?logo=postgresql&style=flat">
 * テキストエディタ：<img src="https://img.shields.io/badge/-Visual%20Studio%20Code-007ACC.svg?logo=visual-studio-code&style=flat">
